@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "EveryDoAgain+CoreDataModel.h"
 
 @interface NewToDoViewController : UIViewController
+
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end

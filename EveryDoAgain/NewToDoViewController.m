@@ -26,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self generalSetUp];
-    
 }
 
 
@@ -37,11 +36,45 @@
     
     self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:self.tapGR];
+    [self createSaveButton];
 }
 
 - (void)dismissKeyboard {
     [self.view endEditing:YES];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self createNewToDoItem];
+    return YES;
+}
+
+- (void)createNewToDoItem {
+    ToDoItem *newToDoItem = [[ToDoItem alloc] initWithContext:self.context];
+    
+    // If appropriate, configure the new managed object.
+    newToDoItem.title = self.titleTextField.text;
+    newToDoItem.toDoDescription = self.descriptionTextField.text;
+    newToDoItem.priorityNumber = [self.priorityTextField.text intValue];
+    newToDoItem.isCompleted = NO;
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![self.context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        abort();
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)createSaveButton {
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save"
+                                                                   style:UIBarButtonItemStyleDone
+                                                                  target:self
+                                                                  action:@selector(createNewToDoItem)];
+    self.navigationItem.rightBarButtonItem = saveButton;
+}
 
 @end

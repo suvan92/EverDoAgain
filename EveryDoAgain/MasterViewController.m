@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "NewToDoViewController.h"
 
 @interface MasterViewController ()
 
@@ -41,23 +42,7 @@ static NSString * const createNewSegueIdentifier = @"createNewToDo";
 
 
 - (void)insertNewObject:(id)sender {
-    
     [self performSegueWithIdentifier:createNewSegueIdentifier sender:self];
-    
-//    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-//    ToDoItem *newToDoItem = [[ToDoItem alloc] initWithContext:context];
-//        
-//    // If appropriate, configure the new managed object.
-//    newToDoItem.title = @"A new item";
-//    
-//    // Save the context.
-//    NSError *error = nil;
-//    if (![context save:&error]) {
-//        // Replace this implementation with code to handle the error appropriately.
-//        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-//        abort();
-//    }
 }
 
 
@@ -71,6 +56,10 @@ static NSString * const createNewSegueIdentifier = @"createNewToDo";
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
+    } else if ([segue.identifier isEqualToString:createNewSegueIdentifier]) {
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        NewToDoViewController *createNewVC = segue.destinationViewController;
+        createNewVC.context = context;
     }
 }
 
@@ -119,7 +108,7 @@ static NSString * const createNewSegueIdentifier = @"createNewToDo";
 
 
 - (void)configureCell:(UITableViewCell *)cell withToDoItem:(ToDoItem *)ToDoItem {
-//    cell.textLabel.text = ToDoItem.timestamp.description;
+    cell.textLabel.text = ToDoItem.title;
 }
 
 
