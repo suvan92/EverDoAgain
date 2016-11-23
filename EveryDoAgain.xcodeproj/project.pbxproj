@@ -15,6 +15,7 @@
 		14C54CC01DE6349E008AB109 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C54CBE1DE6349E008AB109 /* Main.storyboard */; };
 		14C54CC21DE6349E008AB109 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C54CC11DE6349E008AB109 /* Assets.xcassets */; };
 		14C54CC51DE6349F008AB109 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C54CC31DE6349F008AB109 /* LaunchScreen.storyboard */; };
+		14C54CD21DE639A6008AB109 /* NewToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C54CD11DE639A6008AB109 /* NewToDoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		14C54CC11DE6349E008AB109 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14C54CC41DE6349F008AB109 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14C54CC61DE6349F008AB109 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C54CD01DE639A6008AB109 /* NewToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewToDoViewController.h; sourceTree = "<group>"; };
+		14C54CD11DE639A6008AB109 /* NewToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewToDoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +66,10 @@
 		14C54CAE1DE6349E008AB109 /* EveryDoAgain */ = {
 			isa = PBXGroup;
 			children = (
-				14C54CB21DE6349E008AB109 /* AppDelegate.h */,
-				14C54CB31DE6349E008AB109 /* AppDelegate.m */,
-				14C54CB81DE6349E008AB109 /* MasterViewController.h */,
-				14C54CB91DE6349E008AB109 /* MasterViewController.m */,
-				14C54CBB1DE6349E008AB109 /* DetailViewController.h */,
-				14C54CBC1DE6349E008AB109 /* DetailViewController.m */,
-				14C54CBE1DE6349E008AB109 /* Main.storyboard */,
-				14C54CC11DE6349E008AB109 /* Assets.xcassets */,
-				14C54CC31DE6349F008AB109 /* LaunchScreen.storyboard */,
-				14C54CC61DE6349F008AB109 /* Info.plist */,
-				14C54CB51DE6349E008AB109 /* EveryDoAgain.xcdatamodeld */,
+				14C54CCF1DE63955008AB109 /* Views */,
+				14C54CCE1DE63952008AB109 /* UI */,
+				14C54CCD1DE63950008AB109 /* Controllers */,
+				14C54CCC1DE63949008AB109 /* Models */,
 				14C54CAF1DE6349E008AB109 /* Supporting Files */,
 			);
 			path = EveryDoAgain;
@@ -82,9 +78,50 @@
 		14C54CAF1DE6349E008AB109 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14C54CC11DE6349E008AB109 /* Assets.xcassets */,
+				14C54CC61DE6349F008AB109 /* Info.plist */,
+				14C54CB51DE6349E008AB109 /* EveryDoAgain.xcdatamodeld */,
 				14C54CB01DE6349E008AB109 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14C54CCC1DE63949008AB109 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14C54CB21DE6349E008AB109 /* AppDelegate.h */,
+				14C54CB31DE6349E008AB109 /* AppDelegate.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		14C54CCD1DE63950008AB109 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				14C54CB81DE6349E008AB109 /* MasterViewController.h */,
+				14C54CB91DE6349E008AB109 /* MasterViewController.m */,
+				14C54CBB1DE6349E008AB109 /* DetailViewController.h */,
+				14C54CBC1DE6349E008AB109 /* DetailViewController.m */,
+				14C54CD01DE639A6008AB109 /* NewToDoViewController.h */,
+				14C54CD11DE639A6008AB109 /* NewToDoViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		14C54CCE1DE63952008AB109 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				14C54CBE1DE6349E008AB109 /* Main.storyboard */,
+				14C54CC31DE6349F008AB109 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		14C54CCF1DE63955008AB109 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C54CBD1DE6349E008AB109 /* DetailViewController.m in Sources */,
+				14C54CD21DE639A6008AB109 /* NewToDoViewController.m in Sources */,
 				14C54CBA1DE6349E008AB109 /* MasterViewController.m in Sources */,
 				14C54CB71DE6349E008AB109 /* EveryDoAgain.xcdatamodeld in Sources */,
 				14C54CB41DE6349E008AB109 /* AppDelegate.m in Sources */,
