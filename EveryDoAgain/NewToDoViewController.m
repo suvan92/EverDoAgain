@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *priorityTextField;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGR;
 
-
 @end
 
 @implementation NewToDoViewController
@@ -51,7 +50,7 @@
 - (void)createNewToDoItem {
     ToDoItem *newToDoItem = [[ToDoItem alloc] initWithContext:self.context];
     
-    // If appropriate, configure the new managed object.
+    // Set new Todo properties
     newToDoItem.title = self.titleTextField.text;
     newToDoItem.toDoDescription = self.descriptionTextField.text;
     newToDoItem.priorityNumber = [self.priorityTextField.text intValue];
